@@ -1,1 +1,28 @@
-<p>book-detail works!</p>
+<div class="container mt-3">
+  <h1 class="text-center"> Add Data </h1>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="from-group mt-3">
+          <label for="name"> Name </label>
+          <input type="text" class="form-control" formControlName="name" required>
+        </div>
+
+        <div class="from-group mt-3">
+          <label for="price"> Price </label>
+          <input type="text" class="form-control" formControlName="price" required>
+        </div>
+
+        <div class="from-group mt-3">
+          <label for="description"> Description </label>
+          <input type="text" class="form-control" formControlName="description" required>
+        </div>
+
+        <div class="from-group mt-3">
+          <button class="btn btn-primary btn-block" type="submit"> Update Book </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

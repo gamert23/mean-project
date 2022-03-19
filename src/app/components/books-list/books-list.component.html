@@ -1,1 +1,32 @@
-<p>books-list works!</p>
+<div class="container mt-3">
+  <div class="d-flex justify-content-between py-2">
+    <h1> Book lists </h1>
+  </div>
+
+  <div class="table-responsive py-2">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col"> ID </th>
+          <th scope="col"> NAME </th>
+          <th scope="col"> PRICE </th>
+          <th scope="col"> DESCRIPTION </th>
+          <th scope="col"> ACTION </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let book of Books; let i = index">
+          <th scope="row"> {{ book._id }} </th>
+          <th scope="row"> {{ book.name }} </th>
+          <th scope="row"> {{ book.price }} </th>
+          <th scope="row"> {{ book.description }} </th>
+          <th class="text-center">
+            <button class="btn btn-sm btn-primary" routerLink="/book-detail/{{book._id}}"> Edit </button>
+            <button class="btn btn-sm btn-danger ms-3" (click)="delete(book._id, i)"> Delete </button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
